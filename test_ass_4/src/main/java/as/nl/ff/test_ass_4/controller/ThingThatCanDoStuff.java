@@ -5,4 +5,8 @@ public class ThingThatCanDoStuff {
     public int methodThatCanDoStuff(int inputThing){
         return inputThing + inputThing;
     }
+
+    public String methodThatCanAlsoDoStuff(Person testPerson){
+        return testPerson.getFirstName();
+    }
 }
