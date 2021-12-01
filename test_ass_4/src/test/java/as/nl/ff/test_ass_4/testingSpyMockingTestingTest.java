@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 
 @ExtendWith(MockitoExtension.class)
-class testingSpyMockingTesting {
+class testingSpyMockingTestingTest {
 
     @Mock
     private ArrayList<String> list;

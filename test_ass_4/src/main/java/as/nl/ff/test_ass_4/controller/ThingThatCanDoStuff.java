@@ -9,4 +9,31 @@ public class ThingThatCanDoStuff {
     public String methodThatCanAlsoDoStuff(Person testPerson){
         return testPerson.getFirstName();
     }
+
+
+    public void methodThatTriggerCyclomaticComplexityWarning(){
+        if(true){
+            if(true){
+                if(true){
+                    if(true){
+                        if(true){
+                            if(true){
+                                if(true){
+                                    if(true){
+                                        if(true){
+                                            if(true){
+                                                if(true){
+
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
