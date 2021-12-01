@@ -1,4 +1,4 @@
-package as.nl.ff.test_ass_4.controller;
+package as.nl.ff.test_ass_4.mockingFunctions;
 
 public class ThingThatCanDoStuff {
 

@@ -1,7 +1,6 @@
-package as.nl.ff.test_ass_4;
+package as.nl.ff.test_ass_4.mockingFunctions;
 
-import as.nl.ff.test_ass_4.controller.ThingThatCanDoStuff;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -10,12 +9,12 @@ import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 
 @ExtendWith(MockitoExtension.class)
+@Tag("UnitTest")
 class testingSpyMockingTestingTest {
 
     @Mock

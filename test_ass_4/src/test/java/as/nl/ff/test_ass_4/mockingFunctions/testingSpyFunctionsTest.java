@@ -1,20 +1,18 @@
-package as.nl.ff.test_ass_4;
+package as.nl.ff.test_ass_4.mockingFunctions;
 
-import as.nl.ff.test_ass_4.controller.ThingThatCanDoStuff;
-import as.nl.ff.test_ass_4.controller.Person;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.util.Assert;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(MockitoExtension.class)
-
+@Tag("UnitTest")
 public class testingSpyFunctionsTest {
 
     @Spy
