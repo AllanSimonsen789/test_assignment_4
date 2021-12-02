@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class ParserJSON {
     public Student parseString(String jsonString) {
         if(jsonString.charAt(0) == '{' && jsonString.charAt(jsonString.length()-1) == '}'){
-            String[] valuepairs = jsonString.substring(1, jsonString.length()-1).split(",");
+            String[] valuepairs = jsonString.substring(1, jsonString.length()-1).split(",'");
             Student returnStudent = new Student();
             for (String s : valuepairs) {
                 if(s.contains("id")){
@@ -34,6 +34,14 @@ public class ParserJSON {
                     String[] splitString = s.split(":");
                     String classCodeString = splitString[1];
                     returnStudent.setClassCode(classCodeString.trim().charAt(1));
+                }else if(s.contains("grades")){
+                    String[] splitString = s.split(":");
+                    String[] integersStringformat = splitString[1].substring(1, splitString[1].length()-1).split(",");
+                    int[] integers = new int[integersStringformat.length];
+                    for (int i = 0; i < integersStringformat.length; i++) {
+                        integers[i] = Integer.parseInt(integersStringformat[i].trim());
+                    }
+                    returnStudent.setGrades(integers);
                 }
             }
 
@@ -61,6 +69,9 @@ public class ParserJSON {
         }
         if(Character.isLetter(student.getClassCode())){
             sb.append(("'classCode':'"+student.getClassCode()+"',"));
+        }
+        if(student.getGrades() != null && student.getGrades().length > 0){
+            sb.append(("'grades':"+Arrays.toString(student.getGrades())+","));
         }
         sb.deleteCharAt(sb.length()-1);
         sb.append("}");

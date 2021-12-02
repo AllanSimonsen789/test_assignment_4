@@ -1,6 +1,7 @@
 package as.nl.ff.test_ass_4.json_parser;
 
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Student {
@@ -9,16 +10,18 @@ public class Student {
     private float avgGrade;
     private boolean activeStudent;
     private char classCode;
+    private int[] grades;
 
     public Student() {
     }
 
-    public Student(int id, String name, float avgGrade, boolean activeStudent, char classCode) {
+    public Student(int id, String name, float avgGrade, boolean activeStudent, char classCode, int[] grades) {
         this.id = id;
         this.name = name;
         this.avgGrade = avgGrade;
         this.activeStudent = activeStudent;
         this.classCode = classCode;
+        this.grades = grades;
     }
 
     public int getId() {
@@ -61,6 +64,14 @@ public class Student {
         this.classCode = classCode;
     }
 
+    public int[] getGrades() {
+        return grades;
+    }
+
+    public void setGrades(int[] grades) {
+        this.grades = grades;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -69,6 +80,7 @@ public class Student {
                 ", avgGrade=" + avgGrade +
                 ", activeStudent=" + activeStudent +
                 ", classCode=" + classCode +
+                ", grades=" + Arrays.toString(grades) +
                 '}';
     }
 
@@ -77,11 +89,13 @@ public class Student {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return id == student.id && Float.compare(student.avgGrade, avgGrade) == 0 && activeStudent == student.activeStudent && classCode == student.classCode && name.equals(student.name);
+        return id == student.id && Float.compare(student.avgGrade, avgGrade) == 0 && activeStudent == student.activeStudent && classCode == student.classCode && Objects.equals(name, student.name) && Arrays.equals(grades, student.grades);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, avgGrade, activeStudent, classCode);
+        int result = Objects.hash(id, name, avgGrade, activeStudent, classCode);
+        result = 31 * result + Arrays.hashCode(grades);
+        return result;
     }
 }
