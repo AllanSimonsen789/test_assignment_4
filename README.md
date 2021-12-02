@@ -16,3 +16,14 @@ JSONParserConvertObjectToString method & JSONParserConvertStringToObject method.
 The test class uses -> src -> main -> java -> as.nl.ff.test_ass_4 -> json_parser -> Student & ParserJSON classes.
 the jsonparser has functionality to parse json string to a student and parse a student to jsonstring.
 both functionlities are tested and was developed using TDD.
+
+
+### Tic-tac-toe
+There were some late problems doing the TDD process of the game, where the unit test was written wrong, by them not being able to "fail".
+we tried to fix this but The unit test could not retrieve the value of the 2d array, which we used as our playing field for the game.
+There is a simple final game, but unfortunately, it was not made entirely with TDD.
+The game can be found in the Tic Tac Toe folder, and the messy test can be found in the project folder under test. :)
+
+
+
+
